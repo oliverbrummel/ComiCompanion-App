@@ -1,0 +1,19 @@
+<h2>Shopping List Page</h2>
+  <div class = "well">
+    <ul ng-repeat = "entry in shopping.comicEntries">
+      <li>
+        {{entry.name}}, #{{entry.issues}}
+        <input type = "checkbox" />
+      </li>
+    </ul>
+  </div>
+  <div class = "entryForm well">
+    <select ng-model = "shopping.comicEntry.name">
+      <option ng-repeat = "entry in shopping.comicEntries | unique: 'name'" value = "{{entry.name}}">
+        {{entry.name}}
+      </option>
+    </select>
+    <input type = "text" ng-model = "shopping.comicEntry.name"/>
+    <input type = "number" ng-model = "shopping.comicEntry.issues" />
+    <input type = "submit" class = "btn btn-md btn-danger" ng-click = "shopping.makeEntry()"/>
+  </div>

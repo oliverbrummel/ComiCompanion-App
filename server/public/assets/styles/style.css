@@ -1,6 +1,6 @@
-body {
+/*body {
   background
-}
+}*/
 
 button {
   margin: 10px;
@@ -9,5 +9,15 @@ button {
 .jumbotron {
   background: url('./images/stack.2.jpg') no-repeat;
   background-size: cover;
-  color: 
+  color:
+}
+
+.navbar-nav {
+  text-align: center;
+  width: 100%;
+}
+.navbar-nav > li {
+  float: none;
+  display: inline-block;
+  font-size: 2em;
 }

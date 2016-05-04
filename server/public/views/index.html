@@ -1,25 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html ng-app = "comicApp">
   <head>
     <meta charset="utf-8">
     <title>ComiCompanion</title>
+    <!-- LIBRARIES -->
     <script src = "vendors/angular/angular.min.js"></script>
-    <script src = "assets/scripts/client.min.js"></script>
+    <script src = "vendors/angular-route/angular-route.min.js"></script>
     <link rel = "stylesheet" href = "vendors/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- CUSTOM -->
+    <script src = "assets/scripts/client.min.js"></script>
     <link rel = "stylesheet" href = "assets/styles/style.css" />
-
+    <!-- ANGULAR ROUTE PATH -->
+    <base href="/" />
   </head>
-  <body class = "container">
-    <div class = "jumbotron">
-      <h1>ComiCompanion</h1>
-    </div>
-    <div class = "well">
-      <h3>Welcome! Please log in:</h3>
-      <p>Username:</p>
-      <input type= "text" /><br />
-      <p>Password:</p>
-      <input type = "text" /><br />
-      <button>Log in</button>
-    </div>
-  </body>
-</html>
+
+    <body class = "container">
+      <div class = "jumbotron">
+        <h1>ComiCompanion</h1>
+      </div>
+      <nav class = "navbar navbar-default">
+          <div class = "container">
+            <ul class = "nav navbar-nav">
+              <li>
+                <a href = "/shopping">Shopping List</a>
+              </li>
+              <li>
+                <a href = "/reading">Reading List</a>
+              </li>
+              <li>
+                <a href = "/history">Previously Read</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div ng-view>
+
+        </div>
+      </body>
+    </body>
+  </html>
