@@ -1,6 +1,7 @@
 var router = require('express').Router();
 var path = require('path');
-var Comic = require('../../models/comic.js');
+var Comic = require('../../models/comic.js').model;
+var User = require('../../models/user.js');
 
 router.post('/submitComic', function(request, response){
   console.log('requested with a body of:', request.body);
@@ -15,6 +16,7 @@ router.post('/submitComic', function(request, response){
       response.sendStatus(200);
     }
   });
+
 });//closes router.post
 
 router.get('/all', function(request, response){

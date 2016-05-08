@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>ComiCompanion Log In</title>
+    <title>ComiCompanion Register</title>
     <script src = "vendors/angular/angular.min.js"></script>
     <script src = "assets/scripts/client.min.js"></script>
     <link rel = "stylesheet" href = "vendors/bootstrap/dist/css/bootstrap.min.css" />
@@ -11,10 +11,10 @@
   </head>
   <body class = "container">
     <div class = "jumbotron">
-      <h1>ComiCompanion</h1>
+      <h1>ComiCompanion<small>New User? Register Here!</small></h1>
     </div>
     <div class = "well">
-      <form id = "loginForm" action = "/" method = "POST">
+      <form action = "/register" method = "POST">
         <div>
           <label for = "username">Username:</label>
           <input type = "text" name = "username" id = "username" />
@@ -25,7 +25,6 @@
         </div>
         <div>
           <input type = "submit" />
-          <a href = "/register">Register</a>
         </div>
 
       </form>

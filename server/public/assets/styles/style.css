@@ -1,6 +1,10 @@
 /*body {
   background
 }*/
+.jumbotron {
+  color: white;
+  text-shadow: 5px 5px #000000;
+}
 
 button {
   margin: 10px;

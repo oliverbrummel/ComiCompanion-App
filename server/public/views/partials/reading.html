@@ -1,0 +1,10 @@
+<h2>Reading List Page</h2>
+<div class = "well">
+  <ul ng-repeat = "entry in reading.comicEntries">
+    <li>
+      {{entry.name}}, #{{entry.issues}}
+      <!-- <input type = "checkbox" ng-model = "entry.purchased"/> -->
+    </li>
+  </ul>
+  <button>Purchased Selected</button>
+</div>
