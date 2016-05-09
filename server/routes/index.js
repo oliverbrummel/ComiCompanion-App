@@ -2,11 +2,11 @@ var router = require('express').Router();
 var path = require('path');
 var passport = require('passport');
 var User = require('../../models/user.js');
+var comicRouter = require('./comic.js');
 
 
-// router.get('/', function(request, response){
-//   response.sendFile(path.join(__dirname, '../public/views/login.html'));//this was changed from login.html for testing purposes
-// });
+router.use('/comics', comicRouter);
+
 
 router.get('/', function(request, response){
   console.log('User', request.user);
@@ -40,7 +40,6 @@ router.get('/logout', function(request, response){
   request.logout();
   response.redirect('/');
 })
-
 
 
 

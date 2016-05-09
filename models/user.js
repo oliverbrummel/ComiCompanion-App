@@ -8,7 +8,7 @@ var SALT_WORK_FACTOR = 10;
 var UserSchema = new Schema ({
   username: {type: String, required: true, unique: true},
   password: {type: String, required: true},
-  comics: {type: [Comic]}
+  // comics: {type: [Comic]}
 });
 
 UserSchema.pre('save', function(next){

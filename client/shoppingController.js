@@ -1,8 +1,6 @@
 app.controller('ShoppingController',['$http','ComicService', function($http, ComicService){
   var svm = this;
-  // svm.message = "this is where information for shopping list will go."
-  // svm.comicEntry = {};
-  // svm.comicEntries = [];
+
   svm.comicEntry = ComicService.comicEntry;
   svm.comicEntries = ComicService.comicEntries;
 
@@ -25,10 +23,9 @@ app.controller('ShoppingController',['$http','ComicService', function($http, Com
 
 svm.purchaseValue = function(){
 
-  $http.put('/comics/purchased')
 };
 
-  // svm.makeEntry = function(){
+  // svm.makeEntry = function(){     //probably delete
   //   if (!svm.comicEntry.name){
   //     $http.post('/comics/submitComic', svm.comicEntry).then(function(response){
   //       svm.comicEntry.purchased === false;

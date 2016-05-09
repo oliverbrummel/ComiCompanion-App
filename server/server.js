@@ -7,7 +7,7 @@ var passport = require('passport');
 var localStrategy = require('passport-local').Strategy;
 //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ LOCAL ROUTES ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 var indexRouter = require('./routes/index.js');
-var comicRouter = require('./routes/comic.js');
+// var comicRouter = require('./routes/comic.js');
 
 var User = require('../models/user.js');
 
@@ -92,7 +92,7 @@ passport.deserializeUser(function(id, done){
 
 
 app.use('/', indexRouter);
-app.use('/comics', comicRouter);
+// app.use('/comics', comicRouter);
 
 //catchall request
 app.get('/*', function(request, response){
