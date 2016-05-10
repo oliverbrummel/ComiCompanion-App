@@ -1,1 +1,8 @@
 <h2>History Log Page</h2>
+<div class = "well">
+  <ul ng-repeat = "entry in history.readItems">
+    <li>
+      {{entry.name}}<span ng-if = "entry.issues">, #{{entry.issues}}</span>
+    </li>
+  </ul>
+</div>

@@ -7,7 +7,7 @@ var passport = require('passport');
 var localStrategy = require('passport-local').Strategy;
 //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ LOCAL ROUTES ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 var indexRouter = require('./routes/index.js');
-// var comicRouter = require('./routes/comic.js');
+var comicRouter = require('./routes/comic.js');
 
 var User = require('../models/user.js');
 

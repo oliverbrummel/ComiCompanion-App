@@ -2,10 +2,15 @@ var router = require('express').Router();
 var path = require('path');
 var passport = require('passport');
 var User = require('../../models/user.js');
-var comicRouter = require('./comic.js');
+
+var shoppingRouter = require('./shopping.js');
+var readingRouter = require('./reading.js');
+var historyRouter = require('./history.js');
 
 
-router.use('/comics', comicRouter);
+router.use('/shopping', shoppingRouter);
+router.use('/reading', readingRouter);
+router.use('/history', historyRouter);
 
 
 router.get('/', function(request, response){
