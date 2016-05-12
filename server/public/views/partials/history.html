@@ -1,8 +1,8 @@
-<h2>History Log Page</h2>
-<div class = "well">
-  <ul ng-repeat = "entry in history.readItems">
+<h2>History Log</h2>
+<div class = "well" ng-if = "history.readItems.length > 0">
+  <ul ng-repeat = "entry in history.readItems | orderBy: '_id'">
     <li>
-      {{entry.name}}<span ng-if = "entry.issues">, #{{entry.issues}}</span>
+      {{entry._id}}<span ng-if = "entry.lowestIssue">, #{{entry.lowestIssue}} - {{entry.highestIssue}} </span>
     </li>
   </ul>
 </div>

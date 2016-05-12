@@ -20,7 +20,7 @@ router.get('/', function(request, response){
 });
 
 router.post('/', passport.authenticate('local', {
-  successRedirect:'/success',
+  successRedirect:'/shopping',
   failureRedirect:'/'
 }));
 

@@ -1,20 +1,33 @@
-<h2>Shopping List Page</h2>
-  <div class = "well">
-    <ul ng-repeat = "entry in shopping.comicEntries">
+<h2>Shopping List</h2>
+  <div class = "well" ng-if = "shopping.comicEntries.length > 0">
+    <ul ng-repeat = "entry in shopping.comicEntries | orderBy: ['name', 'issue']">
       <li>
-        {{entry.name}}<span ng-if = "entry.issues">, #{{entry.issues}}</span>
+        {{entry.name}}<span ng-if = "entry.issue">, #{{entry.issue}}</span>
         <input type = "checkbox" ng-model = "entry.purchased"/>
       </li>
     </ul>
     <button ng-if = "shopping.comicEntries.length >= 1" ng-click = "shopping.purchaseValue()">Purchased Selected</button>
   </div>
   <div class = "entryForm well">
+
+  <div ng-show = "!shopping.showEntryBox">
+    <a href ng-click ="shopping.showEntryBox = !shopping.showEntryBox">Add new comic</a>
+  </div>
+
+  <div ng-show = "!shopping.showEntryBox">
     <select ng-model = "shopping.comicEntry.name">
-      <option ng-repeat = "entry in shopping.selectionOptions | unique: 'name'" value = "{{entry.name}}">
+      <option ng-repeat = "entry in shopping.selectionOptions | unique: 'name' | orderBy: 'name'" value = "{{entry.name}}">
         {{entry.name}}
       </option>
     </select>
-    <input type = "text" ng-model = "shopping.comicEntry.name"/>
-    <input type = "number" ng-model = "shopping.comicEntry.issues" />
-    <input type = "submit" class = "btn btn-md btn-danger" ng-click = "shopping.makeEntry()"/>
+    <input type = "number" ng-model = "shopping.comicEntry.issue" />
   </div>
+
+  <div ng-show = "shopping.showEntryBox">
+    <label>Enter Comic Here:</label> <br />
+    <input type = "text" ng-model = "shopping.comicEntry.name"/>
+    <input type = "number" ng-model = "shopping.comicEntry.issue" />
+  </div>
+
+  <input type = "submit" class = "btn btn-md btn-danger" ng-click = "shopping.makeEntry()"/>
+</div>

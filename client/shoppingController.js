@@ -3,7 +3,6 @@ app.controller('ShoppingController',['$http','ComicService', function($http, Com
 
   svm.comicEntry = ComicService.comicEntry;
   svm.comicEntries = ComicService.comicEntries;
-
   svm.selectionOptions = ComicService.selectionOptions;
   svm.checkedItems = ComicService.checkedItems;
 
@@ -21,8 +20,8 @@ app.controller('ShoppingController',['$http','ComicService', function($http, Com
     $http.post('/shopping/submitComic', svm.comicEntry).then(function(response){
       svm.comicEntry.purchased === false;
       svm.comicEntry.alreadyRead === false;
-      console.log(response);
       svm.comicEntry = {};
+      svm.showEntryBox = false;
       svm.getAll();
     });
   };

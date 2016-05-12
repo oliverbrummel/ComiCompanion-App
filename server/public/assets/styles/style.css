@@ -10,6 +10,10 @@ button {
   margin: 10px;
 }
 
+.readButton {
+  margin-right: 50px;
+}
+
 .jumbotron {
   background: url('./images/stack.2.jpg') no-repeat;
   background-size: cover;
@@ -25,3 +29,65 @@ button {
   display: inline-block;
   font-size: 2em;
 }
+
+/*BEGIN STAR SYSTEM*/
+
+/*div {
+    padding-top: 50px;
+    text-align: center;
+}
+
+/* Reverse the direction so that we can employ CSS sibling trickery */
+.rating {
+    direction: rtl;
+}
+
+.rating__star {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 22px;
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+/* Create a pseudo element to hold our unicode star */
+.rating__star::before {
+    color: #34495e;
+    content: "\2605";
+    line-height: 1.2em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+/* Make all selected or hovered stars gold */
+.rating__star:focus::before,
+.rating__star:hover::before,
+.rating__star.is_active::before {
+    color: #f1c40f;
+}
+
+/* Make any future siblings of a hovered star gold. In this case
+   'future' looks like previous due to our reversed direction */
+.rating__star:hover ~ .rating__star::before {
+    color: #f1c40f;
+}
+
+.rating__clear {
+    border: none;
+    background: none;
+    color: #34495e;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 8px;
+    text-decoration: underline;
+}
+
+/*.rating__clear:focus,
+.rating__clear:hover {
+    color: #2980b9;
+    outline: none;
+}*/*/

@@ -3,13 +3,7 @@ var path = require('path');
 var Comic = require('../../models/comic.js').model;
 var User = require('../../models/user.js');
 
-// var passport = require('passport');//maybe
-// var mongoose = require('mongoose');//maybe
-
-
 router.post('/submitComic', function(request, response){
-  // console.log('request.body:', request.body);
-  // console.log('request.user:', request.user);
   var newComic = new Comic (request.body);
   newComic.userId = request.user._id;
   newComic.save(function(err){
@@ -66,9 +60,6 @@ router.put('/markComicsPurchased', function(request, response){
   } else {
     response.sendStatus(200);
   }
-
-
 });
-
 
 module.exports = router;

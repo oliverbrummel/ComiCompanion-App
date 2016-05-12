@@ -8,8 +8,9 @@ app.controller('HistoryController',['$http', 'ComicService', function($http, Com
 
   hvm.getAll = function(){
     $http.get('/history/rated').then(function(response){
+      console.log('getting all read comics');
       console.log(response.data);
-      hvm.comicEntries = response.data;
+      hvm.readItems = response.data;
     });
   };
 

@@ -1,9 +1,16 @@
-<h2>Reading List Page</h2>
-<div class = "well">
-  <ul ng-repeat = "entry in reading.comicEntries">
+<h2>Reading List</h2>
+<div class = "well" ng-if = "reading.comicEntries.length > 0">
+  <ul ng-repeat = "entry in reading.comicEntries | orderBy: ['name', 'issue']">
     <li>
-      {{entry.name}}<span ng-if = "entry.issues">, #{{entry.issues}}</span>
-      <button ng-click = "reading.doneReading(entry)">Finished Reading</button>
+      {{entry.name}}<span ng-if = "entry.issue">, #{{entry.issue}}</span>
+
+      <!-- <ol class="rating">
+        <li ng-repeat="star in stars | reverse" class="rating__star" ng-class="{ is_active: user.rating >= star }"
+            ng-click="user.rating = star">
+        </li>
+      </ol> -->
+
+      <button class = "readButton" ng-click = "reading.doneReading(entry)">Finished Reading</button>
     </li>
   </ul>
 </div>
