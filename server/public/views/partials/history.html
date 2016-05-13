@@ -1,8 +1,13 @@
 <h2>History Log</h2>
 <div class = "well" ng-if = "history.readItems.length > 0">
+  <button ng-click = "history.editLog()" ng-show = "!history.showDeleteButtons">Edit</button>
+  <button ng-click = "history.doneEditingLog()" ng-show = "history.showDeleteButtons">Done</button>
   <ul ng-repeat = "entry in history.readItems | orderBy: '_id'">
     <li>
-      {{entry._id}}<span ng-if = "entry.lowestIssue">, #{{entry.lowestIssue}} - {{entry.highestIssue}} </span>
+      <strong>{{entry._id}}</strong><span ng-if = "entry.lowestIssue">, #{{entry.lowestIssue}}<span ng-if = "entry.lowestIssue !== entry.highestIssue">- {{entry.highestIssue}}</span></span> <br />
+      Your Average Rating: <span ng-if = "entry.avgRating">{{entry.avgRating | number:1}} / 5</span>
+      <span ng-if = "!entry.avgRating">N/A</span>
+      <button ng-click = "history.deleteLog(entry)" ng-show = "history.showDeleteButtons">Delete</button>
     </li>
   </ul>
 </div>

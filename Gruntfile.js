@@ -31,7 +31,8 @@ module.exports = function(grunt) {
                    "angular/angular.min.js",
                    "angular/angular.min.js.map",
                    "angular-route/angular-route.min.js",
-                   "angular-route/angular-route.min.js.map"
+                   "angular-route/angular-route.min.js.map",
+                   "font-awesome/css/font-awesome.min.css"
                ],
                "dest": "server/public/vendors/"
            }

@@ -14,6 +14,21 @@ app.controller('HistoryController',['$http', 'ComicService', function($http, Com
     });
   };
 
+  hvm.deleteLog = function(comic){
+    $http.delete('/history/delete/' + comic._id).then(function(response){
+      console.log('comic deleted (I think)');
+      response.sendStatus(200);
+    });
+    hvm.getAll();
+  };
+
+  hvm.editLog = function(){
+    hvm.showDeleteButtons = true;
+  };
+  hvm.doneEditingLog = function(){
+    hvm.showDeleteButtons = false;
+  };
+
   hvm.getAll();
 
 }]);//close controller

@@ -6,8 +6,6 @@ app.factory('ComicService', function(){
   var readItems = [];
   var selectionOptions = [];
 
-  // var stars = [1,2,3,4,5];
-
 
   return {
     comicEntry: comicEntry,

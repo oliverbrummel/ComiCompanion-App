@@ -15,7 +15,7 @@ router.get('/purchased', function(request, response){
 });
 
 router.put('/changeToRead', function(request, response){
-  Comic.findByIdAndUpdate(request.body._id, {$set: {alreadyRead: true}}, function (err, comics){
+  Comic.findByIdAndUpdate(request.body._id, {$set: {alreadyRead: true, rating: request.body.rating}}, function (err, comics){
     if(err){
       console.log(err);
       response.sendStatus(500);

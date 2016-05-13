@@ -31,11 +31,16 @@ router.get('/register', function(request, response){
 router.post('/register', function(request, response){
   console.log(request.body);
   User.create(request.body, function(err){
+    
     if(err) {
       console.log('Error creating User');
       response.sendStatus(500);
     } else {
       response.sendFile(path.join(__dirname, '../public/views/login.html'));
+      // router.post('/', passport.authenticate('local', {
+      //   successRedirect:'/shopping',
+      //   failureRedirect:'/'
+      // }));
     }
   })
 });

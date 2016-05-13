@@ -1,16 +1,23 @@
 <h2>Reading List</h2>
-<div class = "well" ng-if = "reading.comicEntries.length > 0">
+<div class = "well" >
+  <div ng-if = "reading.comicEntries.length === 0">
+    <h3>You need to buy more comics!</h3>
+  </div>
   <ul ng-repeat = "entry in reading.comicEntries | orderBy: ['name', 'issue']">
     <li>
-      {{entry.name}}<span ng-if = "entry.issue">, #{{entry.issue}}</span>
+      <strong>{{entry.name}}</strong><span ng-if = "entry.issue">, #{{entry.issue}}</span>
 
-      <!-- <ol class="rating">
-        <li ng-repeat="star in stars | reverse" class="rating__star" ng-class="{ is_active: user.rating >= star }"
-            ng-click="user.rating = star">
-        </li>
-      </ol> -->
-
-      <button class = "readButton" ng-click = "reading.doneReading(entry)">Finished Reading</button>
+      <!-- <button class = "readButton" ng-click = "reading.doneReading(entry)">Finished Reading</button> -->
+      <div>
+        Rate this issue:
+        <input type="radio" ng-model = "entry.rating" value = "1" /> 1
+        <input type="radio" ng-model = "entry.rating" value = "2" /> 2
+        <input type="radio" ng-model = "entry.rating" value = "3" /> 3
+        <input type="radio" ng-model = "entry.rating" value = "4" /> 4
+        <input type="radio" ng-model = "entry.rating" value = "5" /> 5
+        <button ng-if = "entry.rating" class = "readButton" ng-click = "reading.doneReading(entry)">Rate & Submit</button>
+      </div>
+      <!-- <button ng-if = "entry.rating" class = "readButton" ng-click = "reading.doneReading(entry)">Finished Reading</button> -->
     </li>
   </ul>
 </div>
