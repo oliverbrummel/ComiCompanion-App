@@ -6,10 +6,11 @@
     <!-- LIBRARIES -->
     <script src = "vendors/angular/angular.min.js"></script>
     <script src = "vendors/angular-route/angular-route.min.js"></script>
+    <script src = "vendors/moment/min/moment.min.js"></script>
+    <script src = "vendors/angular-moment/angular-moment.min.js"></script>
     <link rel = "stylesheet" href = "vendors/bootstrap/dist/css/bootstrap.min.css" />
     <link rel = "stylesheet" href = "vendors/font-awesome/css/font-awesome.min.css" />
     <!-- CUSTOM -->
-    <!-- <script src = "assets/scripts/client.min.js"></script> -->
     <script src = "assets/scripts/composite.all.min.js"></script>
     <link rel = "stylesheet" href = "assets/styles/style.css" />
     <!-- ANGULAR ROUTE PATH -->
@@ -20,7 +21,9 @@
       <div class = "jumbotron">
         <h1>ComiCompanion</h1>
       </div>
-      <h3>Hello {{}}</h3>
+      <!-- <div class = "row">
+        <a class = "col-sm-2 col-sm-offset-11" href= "/logout" target = "_self">Log out</a>
+      </div> -->
       <a href= "/logout" target = "_self">Log out</a>
       <nav class = "navbar navbar-default">
           <div class = "container">
@@ -32,7 +35,7 @@
                 <a href = "/reading">Reading List</a>
               </li>
               <li>
-                <a href = "/history">Previously Read</a>
+                <a href = "/history">History Log</a>
               </li>
             </ul>
           </div>

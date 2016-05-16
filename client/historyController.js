@@ -9,8 +9,12 @@ app.controller('HistoryController',['$http', 'ComicService', function($http, Com
   hvm.getAll = function(){
     $http.get('/history/rated').then(function(response){
       console.log('getting all read comics');
-      console.log(response.data);
+      console.log('response.data', response.data);
+      // response.data.cleanDate = moment(response.data.lastReadOn).format('MMMM Do YYYY');
       hvm.readItems = response.data;
+      console.log('hvm.readItems:', hvm.readItems);
+      // hvm.readItems.cleanDate = moment(hvm.readItems.lastReadOn).format('MMMM Do YYYY');
+      // console.log("hvm.readItems.cleanDate:", hvm.readItems.cleanDate);
     });
   };
 

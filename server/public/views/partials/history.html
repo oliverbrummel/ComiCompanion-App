@@ -1,5 +1,5 @@
-<h2>History Log</h2>
-<div class = "well" ng-if = "history.readItems.length > 0">
+<!-- <h2>History Log</h2> -->
+<!-- <div class = "well" ng-if = "history.readItems.length > 0">
   <button ng-click = "history.editLog()" ng-show = "!history.showDeleteButtons">Edit</button>
   <button ng-click = "history.doneEditingLog()" ng-show = "history.showDeleteButtons">Done</button>
   <ul ng-repeat = "entry in history.readItems | orderBy: '_id'">
@@ -10,4 +10,25 @@
       <button ng-click = "history.deleteLog(entry)" ng-show = "history.showDeleteButtons">Delete</button>
     </li>
   </ul>
+</div> -->
+<div class = "well">
+  <button class = "btn btn-xs btn-primary" ng-click = "history.editLog()" ng-show = "!history.showDeleteButtons">Edit Log</button>
+  <button class = "btn btn-xs btn-primary" ng-click = "history.doneEditingLog()" ng-show = "history.showDeleteButtons">Done</button>
+  <table class = "table table-striped container">
+    <tr class = "success">
+      <th>Comic Name</th>
+      <th>Issues Read</th>
+      <th>Your Avg Rating</th>
+      <th>Date Last Read</th>
+      <th></th>
+    </tr>
+    <tr ng-repeat = "entry in history.readItems | orderBy: '_id'">
+      <td><strong>{{entry._id}}</strong></td>
+      <td><span ng-if = "entry.lowestIssue">#{{entry.lowestIssue}}<span ng-if = "entry.lowestIssue !== entry.highestIssue">- {{entry.highestIssue}}</span></span></td>
+      <td><span ng-if = "entry.avgRating">{{entry.avgRating | number:1}} / 5</span></td>
+      <td>{{entry.lastReadOn | amDateFormat: 'MMMM Do YYYY'}}</td>
+      <td><button class = "btn btn-sm btn-danger" ng-click = "history.deleteLog(entry)" ng-show = "history.showDeleteButtons">Delete</button></td>
+
+    </tr>
+  </table>
 </div>

@@ -14,7 +14,30 @@
       <h1>ComiCompanion</h1>
     </div>
     <div class = "well">
+      <h3>Please log in to your account</h3>
       <form id = "loginForm" action = "/" method = "POST">
+        <div class = "form-group">
+          <label for = "username">Username:</label>
+          <input type = "text" class = "form-control" name = "username" id = "username" placeholder = "Username" />
+        </div>
+        <div class= "form-group">
+          <label for = "password">Password:</label>
+          <input type = "password" class = "form-control" name = "password" id = "password" placeholder = "Password" />
+        </div>
+
+        <div class = "form-group">
+          <input type = "submit" class = "btn btn-success" value = "Log In"/>
+        </div>
+        <div>
+          <p>First time using ComiCompanion? Register<a href = "/register"> here</a>!</p>
+        </div>
+      </form>
+    </div>
+
+      <!-- </form> -->
+
+
+      <!-- <form id = "loginForm" action = "/" method = "POST">
         <div>
           <label for = "username">Username:</label>
           <input type = "text" name = "username" id = "username" />
@@ -29,7 +52,7 @@
 
         </div>
 
-      </form>
+      </form> -->
     </div>
   </body>
 </html>

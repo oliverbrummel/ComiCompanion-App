@@ -1,4 +1,4 @@
-var app = angular.module('comicApp', ['ngRoute']);
+var app = angular.module('comicApp', ['ngRoute', 'angularMoment']);
 
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){

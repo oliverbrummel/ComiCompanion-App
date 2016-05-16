@@ -5,7 +5,7 @@ var User = require('../../models/user.js');
 
 router.get('/rated', function(request, response){
   Comic.aggregate({$match: {userId: request.user._id, alreadyRead: true}},
-                  {$group: {_id: "$name", lowestIssue: {$min: "$issue"}, highestIssue: {$max: "$issue"}, avgRating: {$avg: "$rating"}}},
+                  {$group: {_id: "$name", lowestIssue: {$min: "$issue"}, highestIssue: {$max: "$issue"}, avgRating: {$avg: "$rating"}, lastReadOn: {$last: "$dateRead"}}},
      function(err, comics){
        if(err) {
         console.log(err);

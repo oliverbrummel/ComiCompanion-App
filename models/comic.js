@@ -8,6 +8,7 @@ var comicSchema = new Schema({
   issue: {type: Number},
   purchased: {type: Boolean, default: false},
   alreadyRead: {type: Boolean, default: false},
+  dateRead: {type: Date},
   rating: {type: Number}
 });
 
