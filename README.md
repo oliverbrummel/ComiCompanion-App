@@ -7,7 +7,9 @@ The ComiCompanion App was my solo project at Prime Digital Academy. It is a simp
 
 # Installation:
 To install, run:
+
         npm install
 
-To begin, run:
+To start run:        
+
         npm start
