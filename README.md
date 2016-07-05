@@ -17,3 +17,9 @@ To install, run:
 To start, run:        
 
         npm start
+        
+        
+        
+App is also running live at:
+
+https://comicompanion.herokuapp.com
